@@ -1,0 +1,62 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "AMS Requests API",
+  "dateExported": "2025-04-08",
+  "requests": [
+    {
+      "name": "POST - Request Asset",
+      "method": "POST",
+      "url": "http://localhost:5000/api/requests/request",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": {
+          "userId": "6430b7b5cfb9f01234567890",
+          "assetType": "Laptop",
+          "reason": "For development work"
+        }
+      }
+    },
+    {
+      "name": "PUT - Approve Asset Request",
+      "method": "PUT",
+      "url": "http://localhost:5000/api/requests/request/REQUEST_ID_HERE",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": {
+          "status": "approved",
+          "approvedBy": "6430b8a6cfb9f01234567890"
+        }
+      }
+    },
+    {
+      "name": "PUT - Reject Asset Request",
+      "method": "PUT",
+      "url": "http://localhost:5000/api/requests/request/REQUEST_ID_HERE",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": {
+          "status": "rejected",
+          "approvedBy": "6430b8a6cfb9f01234567890"
+        }
+      }
+    }
+  ]
+}

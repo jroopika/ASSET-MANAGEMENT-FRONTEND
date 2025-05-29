@@ -1,0 +1,229 @@
+/* ---------------------------- */
+/* General Styles */
+/* ---------------------------- */
+.login-body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1f1f1f, #121212);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---------------------------- */
+/* Background Animation Wrapper */
+/* ---------------------------- */
+.background-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Floating Circles */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(23, 162, 184, 0.3);
+  box-shadow: 0 0 20px rgba(23, 162, 184, 0.7), 0 0 50px rgba(23, 162, 184, 0.4);
+  animation: move 15s linear infinite, pulse 4s infinite;
+}
+
+.circle:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 15%;
+}
+
+.circle:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  bottom: 15%;
+  left: 5%;
+  background: rgba(40, 167, 69, 0.3);
+}
+
+.circle:nth-child(3) {
+  width: 250px;
+  height: 250px;
+  bottom: 8%;
+  right: 25%;
+  background: rgba(23, 162, 184, 0.5);
+}
+
+.circle:nth-child(4) {
+  width: 100px;
+  height: 100px;
+  top: 30%;
+  right: 10%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------------------------- */
+/* Floating Laptops */
+/* ---------------------------- */
+.laptop {
+  position: absolute;
+  width: 120px;
+  height: 80px;
+  background: linear-gradient(to bottom, #ffffff, #17a2b8);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: perspective(100px) rotateX(30deg);
+  animation: floatLaptop 8s infinite ease-in-out;
+}
+
+.laptop:before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 5px;
+  background: #28a745;
+  top: -5px;
+  left: 10%;
+  border-radius: 3px;
+}
+
+/* Laptop Positions */
+.laptop:nth-child(5) {
+  top: 15%;
+  left: 10%;
+  animation-delay: 1s;
+}
+
+.laptop:nth-child(6) {
+  top: 50%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+/* Floating Animation */
+@keyframes floatLaptop {
+  0% {
+    transform: translateY(0px) perspective(100px) rotateX(30deg);
+  }
+  50% {
+    transform: translateY(15px) perspective(100px) rotateX(30deg);
+  }
+  100% {
+    transform: translateY(0px) perspective(100px) rotateX(30deg);
+  }
+}
+
+/* ---------------------------- */
+/* Login/Signup Container */
+/* ---------------------------- */
+.login-container {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  perspective: 1000px;
+  z-index: 10;
+}
+
+.login-card, .signup-card {
+  width: 100%;
+  height: 100%;
+  background-color: #1f1f1f;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.8s;
+}
+
+.login-card {
+  transform: rotateY(0deg);
+}
+
+.signup-card {
+  transform: rotateY(180deg);
+}
+
+.login-container.flip .login-card {
+  transform: rotateY(180deg);
+}
+
+.login-container.flip .signup-card {
+  transform: rotateY(360deg);
+}
+
+/* ---------------------------- */
+/* Form Styles */
+/* ---------------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Fields */
+input {
+  padding: 15px;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Login Button */
+.login-button {
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  background-color: #28a745;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.login-button:hover {
+  background-color: #218838;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(40, 167, 69, 0.4);
+}
+
+/* Signup Link */
+.signup-link {
+  font-size: 1.1rem;
+  color: #17a2b8;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 10px 15px;
+  border: 1px solid #17a2b8;
+  border-radius: 5px;
+  display: inline-block;
+  width: fit-content;
+  align-self: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.signup-link:hover {
+  background-color: #17a2b8;
+  color: #ffffff;
+}
+
+/* ---------------------------- */
+/* Title without Glitch Animation */
+/* ---------------------------- */
+.title {
+  font-size: 32px;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+}

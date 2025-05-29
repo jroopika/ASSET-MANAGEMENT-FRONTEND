@@ -1,0 +1,30 @@
+Test with Thunder Client 
+
+
+Open Thunder Client in VS Code and do these:
+
+➕ 1. Create a Notification (POST)
+Method: POST
+
+URL: http://localhost:5000/api/notifications
+
+Body > JSON:
+{
+  "userId": "6435a8bfa3c2c3a0e2a45678",
+  "message": "Your asset request has been approved!"
+}
+📤 2. Get Notifications for User (GET)
+Method: GET
+
+URL: http://localhost:5000/api/notifications/6435a8bfa3c2c3a0e2a45678
+
+✅ 3. Mark as Read (PATCH)
+Method: PATCH
+
+URL: http://localhost:5000/api/notifications/read/<notificationId>
+
+❌ 4. Delete a Notification (DELETE)
+Method: DELETE
+
+URL: http://localhost:5000/api/notifications/<notificationId>
+

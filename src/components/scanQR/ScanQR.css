@@ -1,0 +1,174 @@
+/* QR Scanner Page */
+.qr-scanner-container {
+  background-color: #121212;
+  color: #E0E0E0;
+  font-family: 'Lucida', sans-serif;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Navbar */
+.navbar {
+  background: #1F1F1F;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 2px solid #28A745;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-title {
+  color: #E0E0E0;
+  font-size: 22px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #E0E0E0;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #28A745;
+  text-decoration: underline;
+}
+
+/* Title */
+.qr-scanner-title {
+  font-size: 24px;
+  margin: 80px 0 20px;
+}
+
+/* Scanner Box */
+.scanner-box {
+  width: 300px;
+  height: 300px;
+  border: 2px solid #28A745;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* Scan Result */
+.scan-result {
+  background: #1F1F1F;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #28A745;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.scan-result pre {
+  color: #17A2B8;
+  font-size: 14px;
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Waiting Message */
+.waiting-message {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Floating Circles Background */
+.floating-circles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-circles::before,
+.floating-circles::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float 10s infinite linear alternate;
+}
+
+/* Circle 1 */
+.floating-circles::before {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(40, 167, 69, 0.4);
+  top: 10%;
+  left: 20%;
+  animation-duration: 12s;
+}
+
+/* Circle 2 */
+.floating-circles::after {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(23, 162, 184, 0.4);
+  top: 60%;
+  left: 70%;
+  animation-duration: 15s;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+      transform: translateY(0px) translateX(0px);
+  }
+  100% {
+      transform: translateY(-30px) translateX(30px);
+  }
+}
+
+/* Responsive for Smaller Screens */
+@media (max-width: 768px) {
+  .floating-circles::before {
+      width: 100px;
+      height: 100px;
+  }
+
+  .floating-circles::after {
+      width: 120px;
+      height: 120px;
+  }
+}
+
+/* Add button styles */
+.open-scanner-btn {
+  background-color: #28A745;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.open-scanner-btn:hover {
+  background-color: #218838;
+}
+
+/* Rest of the CSS remains the same */

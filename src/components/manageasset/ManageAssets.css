@@ -1,0 +1,258 @@
+.manage-assets {
+  padding: 20px;
+  color: #E0E0E0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ✅ Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #1F1F1F;
+  border-bottom: 2px solid #28A745;
+}
+
+.navbar-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #E0E0E0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: #E0E0E0;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #28A745;
+}
+
+/* Floating Circles */
+.floating-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.floating-circle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(23, 162, 184, 0.3);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(23, 162, 184, 0.8);
+  animation: float 8s infinite alternate ease-in-out;
+}
+
+.circle1 { top: 10%; left: 15%; animation-duration: 6s; }
+.circle2 { top: 50%; left: 70%; animation-duration: 9s; }
+.circle3 { top: 80%; left: 40%; animation-duration: 7s; }
+
+@keyframes float {
+  from { transform: translateY(0px); }
+  to { transform: translateY(20px); box-shadow: 0 0 30px rgba(23, 162, 184, 1); }
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.controls input,
+.controls select,
+.add-asset {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #28A745;
+  background-color: #1F1F1F;
+  color: #E0E0E0;
+  transition: all 0.3s ease-in-out;
+}
+
+.controls input { flex: 1; }
+
+.add-asset {
+  background-color: #28A745;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-asset:hover {
+  background-color: #17A2B8;
+  transform: scale(1.05);
+}
+
+/* Table */
+.asset-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.asset-table th,
+.asset-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #E0E0E0;
+  font-size: 16px;
+}
+
+.asset-table th { background-color: #1F1F1F; text-align: center; }
+.asset-table td { text-align: center; }
+
+.asset-table tr:hover { background-color: rgba(40, 167, 69, 0.2); }
+
+/* Status Colors */
+.available { color: #28A745; font-weight: bold; }
+.assigned { color: #FFC107; font-weight: bold; }
+.under-maintenance { color: #DC3545; font-weight: bold; }
+
+/* Icons */
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.edit-icon { color: #FFC107; }
+.delete-icon { color: #DC3545; }
+
+.edit-icon:hover, .delete-icon:hover { transform: scale(1.2); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .controls { flex-direction: column; gap: 15px; }
+  .asset-table th, .asset-table td { font-size: 14px; }
+  .floating-circle { width: 40px; height: 40px; }
+}
+/* Global styling for the modal overlay */
+.modal-overlay {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the modal is above all other content */
+}
+
+/* Show modal overlay when 'show' class is added */
+.modal-overlay.show {
+  display: flex; /* Make it visible when 'show' is added */
+}
+
+/* Styling for the modal */
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure modal content is above the overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Ensures modal stays fixed on the screen */
+  overflow: hidden;
+}
+
+/* Modal Title */
+.modal h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+/* Input fields for the modal */
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Focus styles for the input fields */
+.modal input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Modal buttons container */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Common button styling */
+.add-asset {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 48%; /* Ensure buttons are side by side */
+  box-sizing: border-box;
+}
+
+/* Green "Save" button */
+.add-asset {
+  background-color: #28A745;
+  color: white;
+}
+
+.add-asset:hover {
+  background-color: #218838;
+}
+
+/* Red "Cancel" button */
+.add-asset.cancel {
+  background-color: #DC3545;
+  color: white;
+}
+
+.add-asset.cancel:hover {
+  background-color: #c82333;
+}
+
+/* Styling for the "Add New Asset" button outside the modal */
+.add-asset-btn {
+  background-color: #28A745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.add-asset-btn:hover {
+  background-color: #218838;
+}

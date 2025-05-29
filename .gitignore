@@ -1,0 +1,14 @@
+# Ignore the node_modules folder
+node_modules/
+
+# Ignore build folder (auto-generated)
+build/
+
+# Ignore Firebase cache
+.firebase/
+
+# Ignore system files
+.DS_Store
+
+# Ignore log files
+*.log

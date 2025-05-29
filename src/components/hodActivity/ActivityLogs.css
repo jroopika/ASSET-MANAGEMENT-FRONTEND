@@ -1,0 +1,92 @@
+/* Global styles */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: "Lucida", sans-serif;
+  }
+  
+  /* Card styling */
+  .card {
+    background-color: #1f1f1f !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .card-header {
+    background-color: #28a745 !important;
+    color: #121212 !important;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+  
+  /* Table styling */
+  .table {
+    margin-bottom: 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .table th {
+    background-color: #17a2b8;
+    color: #121212;
+    font-weight: bold;
+    padding: 12px;
+    text-transform: uppercase;
+  }
+  
+  .table td {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #222222;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #2a2a2a;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  /* Badge styling */
+  .badge {
+    font-size: 1rem;
+    padding: 8px 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+  }
+  
+  .badge-success {
+    background-color: #28a745;
+    color: #121212;
+  }
+  
+  .badge-danger {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .card {
+      margin: 10px;
+    }
+  
+    .table th, .table td {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  
+    .card-header {
+      font-size: 1.1rem;
+    }
+  }
+  

@@ -1,0 +1,43 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "AMS Assignment API",
+  "dateExported": "2025-04-08",
+  "requests": [
+    {
+      "name": "POST - Assign Asset",
+      "method": "POST",
+      "url": "http://localhost:5000/api/assignments/assign",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": {
+          "assetId": "6430c123456789abcdef0001",
+          "userId": "6430c123456789abcdef0002",
+          "assignedBy": "6430c123456789abcdef0003"
+        }
+      }
+    },
+    {
+      "name": "GET - Get All Assignments",
+      "method": "GET",
+      "url": "http://localhost:5000/api/assignments/",
+      "headers": []
+    },
+    {
+      "name": "PUT - Mark Asset as Returned",
+      "method": "PUT",
+      "url": "http://localhost:5000/api/assignments/return/ASSIGNMENT_ID_HERE",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    }
+  ]
+}

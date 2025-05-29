@@ -1,0 +1,83 @@
+/* Overall Page Styling */
+.page-container {
+    background-color: #121212;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px; /* To prevent overlap with navbar */
+    color: #E0E0E0;
+  }
+  
+  /* Title Styling */
+  .page-container h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #28A745; /* Green heading */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Container */
+  .asset-form {
+    background-color: #1F1F1F;
+    padding: 30px;
+    border-radius: 12px;
+    width: 40%;
+    min-width: 350px;
+    box-shadow: 0 4px 12px rgba(0, 255, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #28A745; /* Green Border */
+  }
+  
+  /* Label Styling */
+  .asset-form label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: left;
+    color: #E0E0E0;
+    font-size: 16px;
+  }
+  
+  /* Input & Textarea Styling */
+  .asset-form input,
+  .asset-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #28A745; /* Green border */
+    background-color: #121212;
+    color: #E0E0E0;
+    font-size: 16px;
+  }
+  
+  /* Input & Textarea Focus Effect */
+  .asset-form input:focus,
+  .asset-form textarea:focus {
+    outline: none;
+    border-color: #28A745;
+    box-shadow: 0 0 6px rgba(40, 167, 69, 0.6);
+  }
+  
+  /* Submit Button */
+  .asset-form button {
+    background-color: #28A745;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  /* Button Hover Effect */
+  .asset-form button:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+  }
+  

@@ -1,0 +1,109 @@
+/* HOD Dashboard Container */
+
+.hod-dashboard {
+    background: #121212;
+    min-height: 100vh;
+    color: #e0e0e0;
+    padding: 20px; 
+}
+
+/* Dashboard Title */
+.hod-dashboard h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Cards Styling */
+.hod-dashboard  {
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 255, 170, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: #1f1f1f !important;
+    /* margin-bottom: 20px; */
+}
+
+/* Hover Effect for Cards */
+.hod-dashboard .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 15px rgba(0, 255, 170, 0.2);
+    z-index: 1;
+}
+/* Card Header */
+.hod-dashboard .card{
+    padding:30px;
+    width: 100%;
+    margin-left:50%;
+    margin-right:50%;
+}
+.hod-dashboard .card-header {
+    font-weight: bold;
+    background: #28A745 !important;
+    color: white !important;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Card Body */
+.hod-dashboard .card-body {
+    padding: 15px;   
+}
+
+/* Table Styling */
+.hod-dashboard .table {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #2d2d2d;
+}
+
+.hod-dashboard .table th {
+    background: #17A2B8 !important;
+    color: white !important;
+    text-align: center;
+}
+
+.hod-dashboard .table td {
+    text-align: center;
+}
+
+.hod-dashboard .table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons Styling */
+.hod-dashboard .btn {
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    margin: 0 5px;
+}
+
+.hod-dashboard .btn-success {
+    background: #28A745;
+    border: none;
+}
+
+.hod-dashboard .btn-danger {
+    background: #dc3545;
+    border: none;
+}
+
+.hod-dashboard .btn:hover {
+    transform: scale(1.1);
+}
+
+/* Notifications */
+.hod-dashboard .notifications-card {
+    border-left: 5px solid #FFC107;
+}
+
+.hod-dashboard .notifications-card .card-header {
+    background: #FFC107 !important;
+    color: #333 !important;
+}
+
+.hod-dashboard .notifications-card .card-body p {
+    font-size: 16px;
+    text-align: center;
+}

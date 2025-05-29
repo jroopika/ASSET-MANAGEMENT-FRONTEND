@@ -1,0 +1,237 @@
+/* General Body Styling */
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #E0E0E0;
+  overflow-x: hidden;
+}
+
+.landing-page {
+  overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar.scrolled {
+  background-color: #1F1F1F;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-item .nav-link {
+  font-size: 1.1rem;
+  color: #E0E0E0 !important;
+}
+
+.nav-item .nav-btn {
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #b8cabc;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.nav-item .nav-btn:hover {
+  background-color: #17A2B8;
+  color: #000;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.hero-content, .get-started-section {
+  flex: 1;
+  min-height: 50vh;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  background-color: #1F1F1F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.get-started-section {
+  background-color: #28A745;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container {
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.get-started-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.get-started-description {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-animated {
+  font-size: 1.1rem;
+  padding: 12px 28px;
+  background-color: #FFF;
+  color: #000;
+  border-radius: 25px;
+  border: none;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-animated:hover {
+  background-color: #17A2B8;
+  color: #FFF;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Features Section */
+.features-section {
+  background-color: #1F1F1F;
+  padding: 80px 20px;
+}
+
+.feature-card {
+  background-color: #2c2c2c;
+  color: #E0E0E0;
+  border: 1px solid #28A745;
+  padding: 30px 25px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  min-height: 280px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  background-color: #28A745;
+  color: #FFF;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card .card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.feature-card .card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* About Section */
+.about-section {
+  background-color: #121212;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about-card {
+  background-color: #2c2c2c;
+  color: #E0E0E0;
+  border: 1px solid #28A745;
+  padding: 30px 25px;
+  margin: 20px auto;
+  border-radius: 12px;
+  max-width: 600px;
+  min-height: 200px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  background-color: #28A745;
+  color: #FFF;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.about-card .card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.about-card .card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  background-color: #1F1F1F;
+  color: #AAA;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+.card-body {
+  width: 100%;           /* Takes full width of container */
+  max-width: 400px;      /* But never exceeds 400px */
+  margin: 70px auto;     /* Center horizontally with vertical margin */
+  padding: 20px 30px;    /* Inner spacing */
+  background-color: #2c2c2c;
+  color: #E0E0E0;
+  border-radius: 20px;
+  border: 1px solid #28A745;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-align: center;
+}
+.card:hover {
+  transform: translateY(-8px);
+  background-color: #28A745;
+  color: #FFF;
+}

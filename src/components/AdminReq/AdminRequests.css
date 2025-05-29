@@ -1,0 +1,63 @@
+.admin-requests-container {
+  padding: 20px;
+  font-family: 'Lucida', sans-serif;
+  background-color: #121212; /* Dark Background */
+  color: #e0e0e0; /* Light Text Color */
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e0e0e0; /* Light Text Color */
+}
+
+.requests-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1f1f1f; /* Dark Table Background */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.requests-table th,
+.requests-table td {
+  padding: 12px 15px;
+  border: 1px solid #333; /* Darker Border */
+  text-align: center;
+}
+
+.requests-table th {
+  background-color: #2c6485; /* Dark Blue */
+  color: white;
+  font-weight: bold;
+}
+
+.requests-table tr:nth-child(even) {
+  background-color: #2f2f2f; /* Darker Gray for Even Rows */
+}
+
+.requests-table tr:nth-child(odd) {
+  background-color: #232323; /* Dark Gray for Odd Rows */
+}
+
+.requests-table button {
+  margin: 5px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+}
+
+.requests-table button:first-child {
+  background-color: #28a745; /* Green Approve */
+}
+
+.requests-table button:last-child {
+  background-color: #dc3545; /* Red Reject */
+}
+
+.requests-table button:hover {
+  opacity: 0.8;
+}

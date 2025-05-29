@@ -1,0 +1,46 @@
+
+🔹 Thunder Client Setup for Asset CRUD
+
+✅ 1. Create Asset (POST)
+Method: POST
+URL: http://localhost:5000/api/assets/create
+Headers:
+  Authorization: Bearer <your_token>
+  Content-Type: application/json
+Body (JSON):
+{
+  "serialNumber": "ASSET001",
+  "name": "Laptop",
+  "description": "Dell Latitude 7420"
+}
+
+📃 2. Get All Assets (GET)
+Method: GET
+URL: http://localhost:5000/api/assets/
+Headers:
+  Authorization: Bearer <your_token>
+
+🔍 3. Get Asset by ID (GET)
+Method: GET
+URL: http://localhost:5000/api/assets/<asset_id>
+Headers:
+  Authorization: Bearer <your_token>
+
+✏️ 4. Update Asset (PUT)
+Method: PUT
+URL: http://localhost:5000/api/assets/<asset_id>
+Headers:
+  Authorization: Bearer <your_token>
+  Content-Type: application/json
+Body (JSON):
+{
+  "name": "Updated Laptop",
+  "description": "Updated description",
+  "status": "active"
+}
+
+❌ 5. Delete Asset (DELETE)
+Method: DELETE
+URL: http://localhost:5000/api/assets/<asset_id>
+Headers:
+  Authorization: Bearer <your_token>

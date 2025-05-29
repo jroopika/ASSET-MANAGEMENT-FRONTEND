@@ -1,0 +1,72 @@
+.quick-actions-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  /* ✅ User Dashboard title */
+  .nav-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #28A745;
+    text-decoration: none;
+  }
+  
+  /* ✅ Navigation Links (Centered) */
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: #E0E0E0;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #28A745;
+  }
+  
+  /* ✅ Profile & Logout (Right Aligned) */
+  .nav-right {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-btn {
+    color: #E0E0E0;
+    background: none;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: 0.3s;
+    text-decoration: none;
+  }
+  
+  .nav-btn:hover {
+    color: #28A745;
+  }
+  
+  .logout-btn {
+    color: #E74C3C;
+  }
+  
+  .logout-btn:hover {
+    color: #C0392B;
+  }
+  

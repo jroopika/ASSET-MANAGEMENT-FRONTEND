@@ -1,0 +1,194 @@
+/* Ensures full-page dark background */
+.page-container {
+  background-color: #121212;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centering content in the middle of the page */
+  color: #E0E0E0;
+}
+
+/* Title Styling */
+.page-container h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #28A745;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form Container */
+.issue-form {
+  background-color: #1F1F1F;
+  border: 2px solid #28A745;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.2);
+  width: 40%;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Label Styling */
+.issue-form label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  align-self: flex-start;
+  color: #E0E0E0;
+}
+
+.issue-form select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #28A745;
+  border-radius: 5px;
+  background-color: #181818;
+  color: #E0E0E0; /* Ensures visible text */
+  font-size: 16px;
+  margin-bottom: 15px;
+  appearance: none;
+}
+
+/* Optional: Ensure dropdown options are readable */
+.issue-form select option {
+  background-color: #181818;
+  color: #E0E0E0;
+}
+
+/* Textarea Styling */
+.issue-form textarea {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border: 2px solid #28A745;
+  border-radius: 5px;
+  background-color: #181818;
+  color: #E0E0E0;
+  resize: none;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Submit Button */
+.issue-form button {
+  background-color: #28A745;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  font-weight: bold;
+}
+
+.issue-form button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .issue-form {
+    width: 90%;
+    min-width: 300px;
+  }
+}
+/* Ensures full-page dark background */
+.page-container {
+  background-color: #121212;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centering content in the middle of the page */
+  color: #E0E0E0;
+}
+
+/* Title Styling */
+.page-container h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #28A745;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form Container */
+.issue-form {
+  background-color: #1F1F1F;
+  border: 2px solid #28A745;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.2);
+  width: 40%;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Label Styling */
+.issue-form label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  align-self: flex-start;
+  color: #E0E0E0;
+}
+
+/* Textarea Styling */
+.issue-form textarea {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border: 2px solid #28A745;
+  border-radius: 5px;
+  background-color: #181818;
+  color: #E0E0E0;
+  resize: none;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Input Styling */
+.issue-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #28A745;
+  border-radius: 5px;
+  background-color: #181818;
+  color: #E0E0E0;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Submit Button */
+.issue-form button {
+  background-color: #28A745;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  font-weight: bold;
+}
+
+.issue-form button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .issue-form {
+      width: 90%;
+      min-width: 300px;
+  }
+}

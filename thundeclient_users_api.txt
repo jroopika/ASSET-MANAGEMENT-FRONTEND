@@ -1,0 +1,121 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "AMS Auth API",
+  "dateExported": "2025-04-08",
+  "requests": [
+    {
+      "name": "POST - User Signup",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/signup",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "password": "12345678",
+          "role": "user"
+        }
+      }
+    },
+    {
+      "name": "POST - Admin Signup",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/signup",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": {
+          "name": "Admin User",
+          "email": "admin@example.com",
+          "password": "admin123",
+          "role": "admin"
+        }
+      }
+    },
+    {
+      "name": "POST - HOD Signup",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/signup",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": {
+          "name": "HOD User",
+          "email": "hod@example.com",
+          "password": "hod12345",
+          "role": "hod"
+        }
+      }
+    },
+    {
+      "name": "POST - User Login",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/login",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": {
+          "email": "john@example.com",
+          "password": "12345678"
+        }
+      }
+    },
+    {
+      "name": "POST - Admin Login",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/login",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": {
+          "email": "admin@example.com",
+          "password": "admin123"
+        }
+      }
+    },
+    {
+      "name": "POST - HOD Login",
+      "method": "POST",
+      "url": "http://localhost:5000/api/auth/login",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": {
+          "email": "hod@example.com",
+          "password": "hod12345"
+        }
+      }
+    }
+  ]
+}

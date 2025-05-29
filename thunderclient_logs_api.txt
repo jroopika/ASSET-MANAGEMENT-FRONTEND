@@ -1,0 +1,13 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "AMS Logs API",
+  "dateExported": "2025-04-08",
+  "requests": [
+    {
+      "name": "GET - Get All Logs",
+      "method": "GET",
+      "url": "http://localhost:5000/api/logs/",
+      "headers": []
+    }
+  ]
+}

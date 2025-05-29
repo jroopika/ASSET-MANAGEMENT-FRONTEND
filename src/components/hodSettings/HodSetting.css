@@ -1,0 +1,128 @@
+/* General Page Styling */
+.hod-settings-container {
+    background: #151515;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+    padding: 20px;
+}
+
+/* Navbar Styling */
+.hod-navbar {
+    background-color: #1d0202 !important;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hod-navbar .nav-link {
+    color: #e0e0e0 !important;
+    margin-right: 15px;
+    font-size: 1rem;
+}
+
+.hod-navbar .nav-link:hover {
+    color: #28a745 !important;
+}
+
+.hod-notification {
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.hod-notification .badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 0.75rem;
+    background-color: red;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 50%;
+}
+
+/* Card Styling */
+.hod-card {
+    background: #1f1f1f !important;
+    color: #e0e0e0 !important;
+    border-radius: 10px;
+    border: 1px solid #28a745;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(40, 167, 69, 0.3);
+    width: 450px;
+}
+
+/* Header Title */
+.hod-card-header {
+    background: #28a745;
+    color: #121212;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Form Styling */
+.hod-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hod-form .form-control {
+    background: #2c2c2c;
+    color: #e0e0e0;
+    border: 1px solid #28a745;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.hod-form .form-control:focus {
+    background: #2c2c2c;
+    color: #e0e0e0;
+    border: 1px solid #17a2b8;
+    box-shadow: 0px 0px 10px rgba(23, 162, 184, 0.5);
+    outline: none;
+}
+
+/* Buttons Styling */
+.hod-save-btn {
+    background: #28a745;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hod-save-btn:hover {
+    background: #218838;
+}
+
+.hod-logout-btn {
+    background: #dc3545;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hod-logout-btn:hover {
+    background: #c82333;
+}
+
+/* Footer Styling */
+.hod-footer {
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 15px;
+    margin-top: 20px;
+    color: #aaa;
+}
