@@ -11,7 +11,6 @@ import HODDashboard from './components/Hod/Hod';
 import HodSettings from './components/hodSettings/HodSetting';
 import HODNotifications from './components/hodnotifications/hodNotifications';
 import HODActivityLogs from './components/hodActivity/ActivityLogs';
-import Footer from "./components/Footer/Footer";
 import UserDashboard from "./components/userDash/UserDashboard";
 import Profile from './components/Profile/Profile';
 import RequestAsset from "./components/requestAsset/RequestAsset";
@@ -50,9 +49,6 @@ const App = () => {
           {/* Fallback route */}
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
-
-        {/* ✅ Footer is now outside <Routes>, fixing the error */}
-        <Footer />
       </div>
     </Router>
   );

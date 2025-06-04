@@ -1,31 +1,32 @@
 /* General Page Styling */
 .hod-settings-container {
-    background: #151515;
+    background: #F5F5F5;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #e0e0e0;
+    color: #333333;
     padding: 20px;
 }
 
 /* Navbar Styling */
 .hod-navbar {
-    background-color: #1d0202 !important;
+    background-color: #FFFFFF !important;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hod-navbar .nav-link {
-    color: #e0e0e0 !important;
+    color: #333333 !important;
     margin-right: 15px;
     font-size: 1rem;
 }
 
 .hod-navbar .nav-link:hover {
-    color: #28a745 !important;
+    color: #28A745 !important;
 }
 
 .hod-notification {
@@ -38,7 +39,7 @@
     top: -8px;
     right: -8px;
     font-size: 0.75rem;
-    background-color: red;
+    background-color: #DC3545;
     color: white;
     padding: 3px 6px;
     border-radius: 50%;
@@ -46,19 +47,19 @@
 
 /* Card Styling */
 .hod-card {
-    background: #1f1f1f !important;
-    color: #e0e0e0 !important;
+    background: #FFFFFF !important;
+    color: #333333 !important;
     border-radius: 10px;
-    border: 1px solid #28a745;
+    border: 1px solid #E0E0E0;
     padding: 20px;
-    box-shadow: 0px 0px 15px rgba(40, 167, 69, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 450px;
 }
 
 /* Header Title */
 .hod-card-header {
-    background: #28a745;
-    color: #121212;
+    background: #28A745;
+    color: #FFFFFF;
     font-weight: bold;
     text-align: center;
     padding: 10px;
@@ -73,35 +74,38 @@
 }
 
 .hod-form .form-control {
-    background: #2c2c2c;
-    color: #e0e0e0;
-    border: 1px solid #28a745;
+    background: #FFFFFF;
+    color: #333333;
+    border: 1px solid #E0E0E0;
     padding: 10px;
     border-radius: 5px;
     font-size: 1rem;
 }
 
 .hod-form .form-control:focus {
-    background: #2c2c2c;
-    color: #e0e0e0;
-    border: 1px solid #17a2b8;
-    box-shadow: 0px 0px 10px rgba(23, 162, 184, 0.5);
+    background: #FFFFFF;
+    color: #333333;
+    border: 1px solid #28A745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
     outline: none;
 }
 
 /* Buttons Styling */
 .hod-save-btn {
-    background: #28a745;
+    background: #28A745;
     border: none;
     padding: 10px;
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    color: #FFFFFF;
 }
 
 .hod-save-btn:hover {
-    background: #218838;
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hod-logout-btn {
@@ -124,5 +128,5 @@
     font-size: 0.85rem;
     padding: 15px;
     margin-top: 20px;
-    color: #aaa;
+    color: #b3b3b3;
 }

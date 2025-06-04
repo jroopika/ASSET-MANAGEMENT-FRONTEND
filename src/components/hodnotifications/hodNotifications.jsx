@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button, Card, Container, Nav, Navbar, Table, Badge } from "react-bootstrap";
 import { FaBell } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import './hodNotifications.css';
 
 const HODNotifications = () => {
   const navigate = useNavigate();
@@ -23,14 +24,14 @@ const HODNotifications = () => {
   };
 
   const handleLogout = () => {
-    localStorage.clear(); // Or remove only token: localStorage.removeItem("token")
+    localStorage.clear();
     navigate("/login");
   };
 
   return (
-    <div className="container-fluid p-0" style={{ background: "#121212", minHeight: "100vh" }}>
+    <div className="hod-notifications-container">
       {/* Navbar */}
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar bg="light" variant="light" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/hod">HOD Dashboard</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -52,12 +53,12 @@ const HODNotifications = () => {
       </Navbar>
 
       {/* Notifications Section */}
-      <Container className="mt-4 text-light">
-        <Card bg="dark" text="light" className="mb-4 shadow-lg">
+      <Container className="mt-4">
+        <Card className="mb-4 shadow-lg">
           <Card.Header className="text-center">🔔 Notifications</Card.Header>
           <Card.Body>
             {notifications.length > 0 ? (
-              <Table striped bordered hover variant="dark">
+              <Table striped bordered hover>
                 <thead>
                   <tr>
                     <th>Message</th>

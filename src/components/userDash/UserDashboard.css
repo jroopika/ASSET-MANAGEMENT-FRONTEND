@@ -1,65 +1,201 @@
 /* UserDashboard.css */
-.user-dashboard {
-  font-family: 'Lucida', sans-serif;
-  background-color: #121212;
-  color: #E0E0E0;
+/* Apply Lucida Font Globally */
+* {
+  font-family: 'Lucida Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Light Theme */
+body {
+  background-color: #F5F5F5;
+  color: #333333;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  max-width: 1200px;
+  margin: auto;
   padding: 20px;
-  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.dashboard-title {
-  font-size: 24px;
-  margin-bottom: 20px;
+/* Floating Background Circles */
+.floating-circles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
 }
 
-.dashboard-cards {
+.circle {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(40, 167, 69, 0.1);
+  border-radius: 50%;
+}
+
+.circle:nth-child(1) { top: 10%; left: 10%; }
+.circle:nth-child(2) { top: 30%; right: 15%; }
+.circle:nth-child(3) { bottom: 20%; left: 30%; }
+.circle:nth-child(4) { bottom: 15%; right: 5%; }
+.circle:nth-child(5) { top: 50%; left: 50%; }
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 15px 50px;
+  border-bottom: 2px solid #28A745;
+  z-index: 1000;
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card {
-  background-color: #1F1F1F;
-  padding: 15px;
+/* Push main content below navbar */
+.dashboard-main {
+  margin-top: 90px;
+  padding: 20px;
+}
+
+/* Title Styling */
+.navbar-title {
+  color: #333333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navbar Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #333333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #28A745;
+  text-decoration: underline;
+}
+
+/* Stats Section */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Stat Card */
+.stat-card {
+  background: #FFFFFF;
+  padding: 20px;
   border-radius: 10px;
-  width: 30%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
   transition: transform 0.3s ease;
 }
 
-.card:hover {
-  transform: scale(1.05);
+.stat-card:hover {
+  transform: translateY(-5px);
 }
 
-.card-icon {
-  font-size: 40px;
+.stat-card h3 {
   color: #28A745;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.recent-activity {
-  background-color: #1F1F1F;
+.stat-card p {
+  color: #666666;
+  font-size: 16px;
+}
+
+/* Activity Logs Table */
+.logs {
+  margin-top: 30px;
+}
+
+.logs h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333333;
+}
+
+.activity-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.activity-table th,
+.activity-table td {
+  padding: 12px 16px;
+  font-size: 18px;
+  text-align: left;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.activity-table th {
+  background-color: #28A745;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.activity-table tr:nth-child(even) {
+  background-color: #F8F9FA;
+}
+
+.activity-table tr:hover {
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
   padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  font-size: 14px;
+  margin-top: 30px;
+  color: #666666;
 }
 
-.quick-actions {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stats {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.action-btn {
-  background-color: #17A2B8;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.action-btn:hover {
-  background-color: #138496;
+  .activity-table th,
+  .activity-table td {
+    font-size: 14px;
+  }
 }

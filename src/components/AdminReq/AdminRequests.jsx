@@ -49,6 +49,17 @@ const AdminRequests = () => {
     }
   };
 
+  const getActionClass = (action) => {
+    switch (action) {
+      case "approved":
+        return "action-approved";
+      case "rejected":
+        return "action-rejected";
+      default:
+        return "";
+    }
+  };
+
   if (loading) {
     return <p>Loading requests...</p>;
   }

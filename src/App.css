@@ -1,7 +1,39 @@
-.App {
-  text-align: center;
+/* Apply Lucida Font Globally */
+* {
+  font-family: 'Lucida Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Light Theme */
+body {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* App Container */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* App Header */
+.App-header {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #333333;
+  border-bottom: 2px solid #28A745;
+}
+
+/* App Logo */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,34 +45,189 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
+/* App Link */
 .App-link {
-  color: #61dafb;
+  color: #28A745;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App-link:hover {
+  color: #218838;
+}
+
+/* App Footer */
+.App-footer {
+  background-color: #ffffff;
+  padding: 20px;
+  color: #333333;
+  border-top: 2px solid #28A745;
+  margin-top: auto;
+}
+
+/* App Content */
+.App-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* App Navigation */
+.App-nav {
+  background-color: #ffffff;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.App-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.App-nav a {
+  color: #333333;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.App-nav a:hover {
+  color: #28A745;
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+/* App Card */
+.App-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+/* App Button */
+.App-button {
+  background-color: #28A745;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.App-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.App-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* App Form */
+.App-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.App-form input,
+.App-form select,
+.App-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.App-form input:focus,
+.App-form select:focus,
+.App-form textarea:focus {
+  outline: none;
+  border-color: #28A745;
+}
+
+/* App Alert */
+.App-alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.App-alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.App-alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* App Loading */
+.App-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.App-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #28A745;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* App Responsive */
+@media (max-width: 768px) {
+  .App-nav ul {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-content {
+    padding: 10px;
+  }
+
+  .App-form {
+    padding: 15px;
   }
 }
+
 /* Ensure the entire app takes full height */
 .app-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Full viewport height */
+  min-height: 100vh;
 }
 
 /* Push footer to the bottom */
@@ -51,15 +238,16 @@
   bottom: 0;
   left: 0;
   padding: 10px 0;
-  background-color: #282c34; /* Match your theme */
-  color: white;
+  background-color: #ffffff;
+  color: #333333;
+  border-top: 1px solid #e0e0e0;
 }
 
 /* If login page needs centering */
 .login-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content */
+  justify-content: center;
   align-items: center;
-  height: 100vh; /* Take full viewport */
+  height: 100vh;
 }

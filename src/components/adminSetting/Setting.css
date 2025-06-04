@@ -1,7 +1,7 @@
 /* ✅ Unique styles for Admin Navbar */
 .admin-navbar {
-    background-color: #1F1F1F;
-    color: white;
+    background-color: #FFFFFF;
+    color: #333333;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -11,11 +11,13 @@
     top: 0;
     left: 0;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .admin-navbar-title {
     font-size: 22px;
     font-weight: bold;
+    color: #333333;
 }
 
 .admin-nav-links {
@@ -25,20 +27,21 @@
 
 .admin-nav-links a {
     text-decoration: none;
-    color: white;
+    color: #333333;
     padding: 8px 15px;
     transition: 0.3s;
 }
 
 .admin-nav-links a:hover {
     background-color: #28A745;
+    color: #FFFFFF;
     border-radius: 5px;
 }
 
 /* ✅ Unique styles for Admin Settings */
 .admin-settings-container {
-    background-color: #121212;
-    color: #E0E0E0;
+    background-color: #F5F5F5;
+    color: #333333;
     font-family: 'Lucida', sans-serif;
     width: 100%;
     max-width: 600px;
@@ -53,13 +56,14 @@
 
 /* ✅ Form */
 .admin-settings-form {
-    background: #1F1F1F;
+    background: #FFFFFF;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #28A745;
+    border: 1px solid #E0E0E0;
     width: 100%;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* ✅ Inputs */
@@ -68,9 +72,9 @@
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    background: #2C2C2C;
-    color: #E0E0E0;
-    border: 1px solid #28A745;
+    background: #FFFFFF;
+    color: #333333;
+    border: 1px solid #E0E0E0;
     border-radius: 5px;
 }
 
@@ -79,12 +83,14 @@
     font-size: 26px;
     margin-bottom: 20px;
     text-align: center;
+    color: #333333;
 }
 
 /* ✅ Labels */
 .admin-settings-form label {
     margin-top: 10px;
     font-weight: bold;
+    color: #333333;
 }
 
 /* ✅ Save Button */
@@ -96,6 +102,7 @@
     margin-top: 15px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .admin-save-button:hover {
@@ -120,18 +127,19 @@ body.theme-light .admin-settings-form select {
     color: #222222;
     border: 1px solid #17A2B8;
 }
+
 .logout-button {
     margin-left: 20px;
     padding: 6px 12px;
-    background-color: #e63946;
+    background-color: #dc3545;
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s ease;
-  }
-  
-  .logout-button:hover {
+}
+
+.logout-button:hover {
     background-color: #c62828;
-  }
+}
   

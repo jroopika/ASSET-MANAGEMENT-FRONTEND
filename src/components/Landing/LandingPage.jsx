@@ -22,7 +22,7 @@ const LandingPage = () => {
   return (
     <div className="landing-page" style={{ fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" }}>
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-light fixed-top">
         <div className="container">
           <img src={logo} alt="Logo" className="navbar-logo" />
           <a className="navbar-brand" href="#">Asset Management</a>
@@ -113,13 +113,6 @@ const LandingPage = () => {
   </div>
 </section>
 
-      {/* Footer Section */}
-      <footer className="footer bg-dark text-light py-4">
-        <div className="container text-center">
-          <p>&copy; 2025 Asset Management. All rights reserved.</p>
-
-        </div>
-      </footer>
     </div>
   );
 };

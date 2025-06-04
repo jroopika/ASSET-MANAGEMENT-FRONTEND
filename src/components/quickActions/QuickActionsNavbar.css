@@ -3,14 +3,15 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #1F1F1F;
-    color: #E0E0E0;
+    background-color: #FFFFFF;
+    color: #333333;
     padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    border-bottom: 2px solid #28A745;
   }
   
   /* ✅ User Dashboard title */
@@ -28,7 +29,7 @@
   }
   
   .nav-links a {
-    color: #E0E0E0;
+    color: #333333;
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s;
@@ -45,7 +46,7 @@
   }
   
   .nav-btn {
-    color: #E0E0E0;
+    color: #333333;
     background: none;
     border: none;
     font-size: 16px;
@@ -63,10 +64,10 @@
   }
   
   .logout-btn {
-    color: #E74C3C;
+    color: #DC3545;
   }
   
   .logout-btn:hover {
-    color: #C0392B;
+    color: #C82333;
   }
   

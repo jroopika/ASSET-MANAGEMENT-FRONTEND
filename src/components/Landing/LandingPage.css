@@ -3,8 +3,8 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #121212;
-  color: #E0E0E0;
+  background-color: #FFFFFF;
+  color: #333333;
   overflow-x: hidden;
 }
 
@@ -16,6 +16,8 @@ body {
 .navbar {
   padding: 1rem;
   transition: all 0.3s ease;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-logo {
@@ -24,31 +26,34 @@ body {
 }
 
 .navbar.scrolled {
-  background-color: #1F1F1F;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
   font-size: 1.5rem;
   font-weight: bold;
+  color: #333333;
 }
 
 .nav-item .nav-link {
   font-size: 1.1rem;
-  color: #E0E0E0 !important;
+  color: #333333 !important;
 }
 
 .nav-item .nav-btn {
   font-size: 1rem;
   padding: 8px 16px;
   border-radius: 20px;
-  background-color: #b8cabc;
+  background-color: #28A745;
+  color: #FFFFFF;
   border: none;
   transition: all 0.3s ease;
 }
 
 .nav-item .nav-btn:hover {
-  background-color: #17A2B8;
-  color: #000;
+  background-color: #218838;
+  color: #FFFFFF;
 }
 
 /* Hero Section */
@@ -65,7 +70,7 @@ body {
 }
 
 .hero-content {
-  background-color: #1F1F1F;
+  background-color: #F5F5F5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +79,7 @@ body {
 
 .get-started-section {
   background-color: #28A745;
-  color: #FFF;
+  color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,28 +93,32 @@ body {
   font-size: 2.8rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  color: #333333;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  color: #666666;
 }
 
 .get-started-title {
   font-size: 2.2rem;
   font-weight: bold;
+  color: #FFFFFF;
 }
 
 .get-started-description {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
+  color: #FFFFFF;
 }
 
 .btn-animated {
   font-size: 1.1rem;
   padding: 12px 28px;
-  background-color: #FFF;
-  color: #000;
+  background-color: #FFFFFF;
+  color: #28A745;
   border-radius: 25px;
   border: none;
   transition: all 0.3s ease;
@@ -118,8 +127,8 @@ body {
 }
 
 .btn-animated:hover {
-  background-color: #17A2B8;
-  color: #FFF;
+  background-color: #218838;
+  color: #FFFFFF;
 }
 
 /* Section Titles */
@@ -128,37 +137,40 @@ body {
   font-weight: bold;
   text-align: center;
   margin-bottom: 1rem;
+  color: #333333;
 }
 
 .section-description {
   font-size: 1.2rem;
   text-align: center;
   margin-bottom: 3rem;
+  color: #666666;
 }
 
 /* Features Section */
 .features-section {
-  background-color: #1F1F1F;
+  background-color: #F5F5F5;
   padding: 80px 20px;
 }
 
 .feature-card {
-  background-color: #2c2c2c;
-  color: #E0E0E0;
-  border: 1px solid #28A745;
+  background-color: #FFFFFF;
+  color: #333333;
+  border: 1px solid #E0E0E0;
   padding: 30px 25px;
   margin-bottom: 30px;
   border-radius: 12px;
   min-height: 280px;
   transition: transform 0.3s ease, background-color 0.3s ease;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .feature-card:hover {
   transform: translateY(-10px);
   background-color: #28A745;
-  color: #FFF;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  color: #FFFFFF;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .feature-card .card-title {
@@ -174,28 +186,29 @@ body {
 
 /* About Section */
 .about-section {
-  background-color: #121212;
+  background-color: #FFFFFF;
   padding: 80px 20px;
   text-align: center;
 }
 
 .about-card {
-  background-color: #2c2c2c;
-  color: #E0E0E0;
-  border: 1px solid #28A745;
+  background-color: #FFFFFF;
+  color: #333333;
+  border: 1px solid #E0E0E0;
   padding: 30px 25px;
   margin: 20px auto;
   border-radius: 12px;
   max-width: 600px;
   min-height: 200px;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .about-card:hover {
   transform: translateY(-10px);
   background-color: #28A745;
-  color: #FFF;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  color: #FFFFFF;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .about-card .card-title {
@@ -211,27 +224,30 @@ body {
 
 /* Footer */
 .footer {
-  background-color: #1F1F1F;
-  color: #AAA;
+  background-color: #F5F5F5;
+  color: #666666;
   text-align: center;
   padding: 20px 0;
   font-size: 0.9rem;
+  border-top: 1px solid #E0E0E0;
 }
+
 .card-body {
-  width: 100%;           /* Takes full width of container */
-  max-width: 400px;      /* But never exceeds 400px */
-  margin: 70px auto;     /* Center horizontally with vertical margin */
-  padding: 20px 30px;    /* Inner spacing */
-  background-color: #2c2c2c;
-  color: #E0E0E0;
+  width: 100%;
+  max-width: 400px;
+  margin: 70px auto;
+  padding: 20px 30px;
+  background-color: #FFFFFF;
+  color: #333333;
   border-radius: 20px;
-  border: 1px solid #28A745;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+  border: 1px solid #E0E0E0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, background-color 0.3s ease;
   text-align: center;
 }
+
 .card:hover {
   transform: translateY(-8px);
   background-color: #28A745;
-  color: #FFF;
+  color: #FFFFFF;
 }

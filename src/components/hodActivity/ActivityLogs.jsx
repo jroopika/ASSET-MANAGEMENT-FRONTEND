@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Table, Container, Badge } from 'react-bootstrap';
+import { Badge } from 'react-bootstrap';
 import { FaCheck, FaTimes } from 'react-icons/fa';
 import HODNavbar from '../Login/Navbar';
 import { fetchLogs } from '../../services/api';
@@ -25,7 +25,6 @@ const ActivityLogs = () => {
         setRequests(response);
       } catch (error) {
         const errorMessage = error.message || 'Failed to fetch requests';
-        console.error('Error fetching requests:', errorMessage, error);
         setError(errorMessage);
         setRequests([
           {
@@ -34,7 +33,7 @@ const ActivityLogs = () => {
             assetType: 'Laptop',
             reason: 'Need for development work',
             status: 'Approved',
-            hodApprovalStatus: 'Pending',
+            hodApprovalStatus: 'Approved',
             requestedAt: new Date().toISOString(),
           },
           {
@@ -70,74 +69,70 @@ const ActivityLogs = () => {
   return (
     <>
       <HODNavbar />
-      <Container className="mt-4">
-        <Card bg="dark" text="light" className="shadow-lg">
-          <Card.Header as="h5" className="text-center">HOD Request Logs</Card.Header>
-          <Card.Body>
-            {loading && <p className="text-center">Loading requests...</p>}
-            {error && <p className="text-center text-danger">Error: {error}</p>}
-            {!loading && !error && requests.length > 0 ? (
-              <Table striped bordered hover variant="dark">
-                <thead>
-                  <tr>
-                    <th>User</th>
-                    <th>Asset Type</th>
-                    <th>Reason</th>
-                    <th>Status</th>
-                    <th>HOD Approval</th>
-                    <th>Requested At</th>
+      <section className="hod-section">
+        <h2>Request Activity Logs</h2>
+        {loading ? (
+          <p className="text-center">Loading requests...</p>
+        ) : error ? (
+          <p className="text-center text-danger">{error}</p>
+        ) : (
+          <table className="hod-table">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Asset Type</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>HOD Approval</th>
+                <th>Requested At</th>
+              </tr>
+            </thead>
+            <tbody>
+              {requests.length === 0 ? (
+                <tr>
+                  <td colSpan="6" className="empty-row">No requests available</td>
+                </tr>
+              ) : (
+                requests.map((request) => (
+                  <tr key={request._id}>
+                    <td>{request.userId?.name || 'System'}</td>
+                    <td>{request.assetType || 'N/A'}</td>
+                    <td>{request.reason || 'N/A'}</td>
+                    <td>
+                      {request.status ? (
+                        <span className={`badge badge-${request.status.toLowerCase() === 'approved' ? 'success' : 'danger'}`}>
+                          {request.status}{' '}
+                          {request.status.toLowerCase() === 'approved' ? <FaCheck /> : <FaTimes />}
+                        </span>
+                      ) : 'N/A'}
+                    </td>
+                    <td>
+                      {request.status === 'Approved' ? (
+                        <span className="badge badge-success">Approved</span>
+                      ) : request.hodApprovalStatus ? (
+                        <span
+                          className={`badge ${
+                            request.hodApprovalStatus.toLowerCase() === 'approved'
+                              ? 'badge-success'
+                              : request.hodApprovalStatus.toLowerCase() === 'pending'
+                              ? 'badge-warning'
+                              : 'badge-danger'
+                          }`}
+                        >
+                          {request.hodApprovalStatus}
+                        </span>
+                      ) : (
+                        'N/A'
+                      )}
+                    </td>
+                    <td>{formatDate(request.requestedAt)}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {requests.map((request) => (
-                    <tr key={request._id}>
-                      <td>{request.userId?.name || 'System'}</td>
-                      <td>{request.assetType || 'N/A'}</td>
-                      <td>{request.reason || 'N/A'}</td>
-                      <td>
-                        {request.status ? (
-                          <Badge
-                            bg={request.status.toLowerCase() === 'approved' ? 'success' : 'danger'}
-                          >
-                            {request.status}{' '}
-                            {request.status.toLowerCase() === 'approved' ? (
-                              <FaCheck />
-                            ) : (
-                              <FaTimes />
-                            )}
-                          </Badge>
-                        ) : (
-                          'N/A'
-                        )}
-                      </td>
-                      <td>
-                        {request.hodApprovalStatus ? (
-                          <Badge
-                            bg={
-                              request.hodApprovalStatus.toLowerCase() === 'approved'
-                                ? 'success'
-                                : request.hodApprovalStatus.toLowerCase() === 'pending'
-                                ? 'warning'
-                                : 'danger'
-                            }
-                          >
-                            {request.hodApprovalStatus}
-                          </Badge>
-                        ) : (
-                          'N/A'
-                        )}
-                      </td>
-                      <td>{formatDate(request.requestedAt)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </Table>
-            ) : (
-              !loading && !error && <p className="text-center">No requests available</p>
-            )}
-          </Card.Body>
-        </Card>
-      </Container>
+                ))
+              )}
+            </tbody>
+          </table>
+        )}
+      </section>
     </>
   );
 };

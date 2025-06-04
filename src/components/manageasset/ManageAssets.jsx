@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { FaEdit, FaPlus, FaTrash } from "react-icons/fa";
-import { getAssets, createAsset, updateAsset, deleteAsset } from "../../services/api"; // Import new functions
+import { getAssets, createAsset, updateAsset, deleteAsset } from "../../services/api";
 import { QRCodeSVG } from "qrcode.react";
 import "./ManageAssets.css";
 
@@ -20,7 +20,7 @@ const ManageAssets = () => {
   const fetchAssets = useCallback(async () => {
     try {
       const data = await getAssets();
-      console.log("Fetched assets:", data);
+      console.log("Fetched assets:", data); // Debug the data structure
       setAssets(data);
     } catch (error) {
       console.error("Error fetching assets:", error);
@@ -68,7 +68,7 @@ const ManageAssets = () => {
         await createAsset(newAsset);
       }
 
-      fetchAssets(); // Refresh the list
+      fetchAssets();
       setShowModal(false);
       setNewAssetName("");
       setNewSerialNumber("");
@@ -91,14 +91,12 @@ const ManageAssets = () => {
 
   return (
     <div className="manage-assets">
-      {/* Floating Circles */}
       <div className="floating-circles">
         <div className="floating-circle circle1"></div>
         <div className="floating-circle circle2"></div>
         <div className="floating-circle circle3"></div>
       </div>
 
-      {/* Navbar */}
       <nav className="navbar">
         <h2 className="navbar-title">ADMIN PANEL</h2>
         <div className="nav-links">
@@ -150,19 +148,18 @@ const ManageAssets = () => {
               <td className={asset.status.toLowerCase().replace(" ", "-")}>
                 {asset.status}
               </td>
-              <td>{asset.assignedTo ? asset.assignedTo.name : "-"}</td>
+              <td>{asset.assignedTo && asset.assignedTo.name ? asset.assignedTo.name : "-"}</td>
               <td style={{ padding: "10px" }}>
-               <QRCodeSVG
-  value={`${process.env.REACT_APP_FRONTEND_URL}/asset/${asset._id}`}
-  size={100}
-  bgColor="#ffffff"
-  fgColor="#000000"
-  style={{ border: "1px solid #ccc", borderRadius: "8px" }}
-/>
-
+                <QRCodeSVG
+                  value={`${process.env.REACT_APP_FRONTEND_URL}/asset/${asset._id}`}
+                  size={100}
+                  bgColor="#ffffff"
+                  fgColor="#000000"
+                  style={{ border: "1px solid #ccc", borderRadius: "8px" }}
+                />
               </td>
               <td>
-                <FaEdit
+                <FaEdit 
                   className="edit-icon"
                   onClick={() => handleEditAsset(asset)}
                 />
@@ -176,7 +173,6 @@ const ManageAssets = () => {
         </tbody>
       </table>
 
-      {/* Modal */}
       {showModal && (
         <div className="modal-overlay show">
           <div className="modal">
@@ -199,7 +195,6 @@ const ManageAssets = () => {
               value={newDescription}
               onChange={(e) => setNewDescription(e.target.value)}
             />
-
             <div className="modal-buttons">
               <button onClick={handleSaveAsset} className="add-asset">
                 {isEditing ? "Update" : "Save"}

@@ -1,8 +1,9 @@
 .manage-assets {
   padding: 20px;
-  color: #E0E0E0;
+  color: #333333;
   position: relative;
   overflow-x: hidden;
+  background-color: #F5F5F5;
 }
 
 /* ✅ Navbar */
@@ -11,14 +12,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background-color: #1F1F1F;
+  background-color: #FFFFFF;
   border-bottom: 2px solid #28A745;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-title {
   font-size: 22px;
   font-weight: bold;
-  color: #E0E0E0;
+  color: #333333;
 }
 
 .nav-links {
@@ -27,7 +29,7 @@
 }
 
 .nav-links a {
-  color: #E0E0E0;
+  color: #333333;
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s;
@@ -52,9 +54,9 @@
   position: absolute;
   width: 60px;
   height: 60px;
-  background-color: rgba(23, 162, 184, 0.3);
+  background-color: rgba(40, 167, 69, 0.1);
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(23, 162, 184, 0.8);
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.3);
   animation: float 8s infinite alternate ease-in-out;
 }
 
@@ -64,7 +66,7 @@
 
 @keyframes float {
   from { transform: translateY(0px); }
-  to { transform: translateY(20px); box-shadow: 0 0 30px rgba(23, 162, 184, 1); }
+  to { transform: translateY(20px); box-shadow: 0 0 30px rgba(40, 167, 69, 0.2); }
 }
 
 /* Controls */
@@ -80,22 +82,30 @@
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
-  border: 1px solid #28A745;
-  background-color: #1F1F1F;
-  color: #E0E0E0;
+  border: 1px solid #ced4da;
+  background-color: #FFFFFF;
+  color: #333333;
   transition: all 0.3s ease-in-out;
 }
 
 .controls input { flex: 1; }
 
+.controls input:focus,
+.controls select:focus {
+  outline: none;
+  border-color: #28A745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+}
+
 .add-asset {
   background-color: #28A745;
+  color: #FFFFFF;
   cursor: pointer;
   font-weight: bold;
 }
 
 .add-asset:hover {
-  background-color: #17A2B8;
+  background-color: #218838;
   transform: scale(1.05);
 }
 
@@ -103,25 +113,38 @@
 .asset-table {
   width: 100%;
   border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
 }
 
 .asset-table th,
 .asset-table td {
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #e0e0e0;
   font-size: 16px;
+  color: #333333;
 }
 
-.asset-table th { background-color: #1F1F1F; text-align: center; }
+.asset-table th { 
+  background-color: #28A745; 
+  color: #FFFFFF; 
+  text-align: center; 
+}
+
 .asset-table td { text-align: center; }
 
-.asset-table tr:hover { background-color: rgba(40, 167, 69, 0.2); }
+.asset-table tr:hover { 
+  background-color: rgba(40, 167, 69, 0.1); 
+}
 
 /* Status Colors */
 .available { color: #28A745; font-weight: bold; }
 .assigned { color: #FFC107; font-weight: bold; }
-.under-maintenance { color: #DC3545; font-weight: bold; }
+.under-maintenance { color: #dc3545; font-weight: bold; }
 
 /* Icons */
 .edit-icon,
@@ -133,7 +156,7 @@
 }
 
 .edit-icon { color: #FFC107; }
-.delete-icon { color: #DC3545; }
+.delete-icon { color: #dc3545; }
 
 .edit-icon:hover, .delete-icon:hover { transform: scale(1.2); }
 
@@ -143,39 +166,41 @@
   .asset-table th, .asset-table td { font-size: 14px; }
   .floating-circle { width: 40px; height: 40px; }
 }
+
 /* Global styling for the modal overlay */
 .modal-overlay {
-  display: none; /* Initially hidden */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
-  z-index: 999; /* Ensure the modal is above all other content */
+  z-index: 999;
 }
 
 /* Show modal overlay when 'show' class is added */
 .modal-overlay.show {
-  display: flex; /* Make it visible when 'show' is added */
+  display: flex;
 }
 
 /* Styling for the modal */
 .modal {
-  background-color: white;
+  background-color: #FFFFFF;
   padding: 20px;
   border-radius: 8px;
   width: 400px;
   max-width: 90%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* Ensure modal content is above the overlay */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative; /* Ensures modal stays fixed on the screen */
+  position: relative;
   overflow: hidden;
+  border: 1px solid #e0e0e0;
 }
 
 /* Modal Title */
@@ -183,7 +208,7 @@
   margin-bottom: 20px;
   font-size: 1.5rem;
   text-align: center;
-  color: #333;
+  color: #333333;
 }
 
 /* Input fields for the modal */
@@ -191,15 +216,17 @@
   width: 100%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #ddd;
+  border: 1px solid #ced4da;
   border-radius: 4px;
   font-size: 1rem;
   box-sizing: border-box;
+  background-color: #ffffff;
+  color: #333333;
 }
 
 /* Focus styles for the input fields */
 .modal input:focus {
-  border-color: #007bff;
+  border-color: #28A745;
   outline: none;
 }
 
@@ -218,7 +245,7 @@
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  width: 48%; /* Ensure buttons are side by side */
+  width: 48%;
   box-sizing: border-box;
 }
 

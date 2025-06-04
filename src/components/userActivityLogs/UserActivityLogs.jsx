@@ -1,34 +1,34 @@
 import React, { useEffect, useState } from "react";
-import { fetchLogs } from "../../services/api";
 import QuickActionsNavbar from "../quickActions/QuickActionsNavbar";
 import "./UserActivityLogs.css";
+import api from "../../services/api"; // or your axios instance
 
 const UserActivityLogs = () => {
   const [activityData, setActivityData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const fetchUserLogs = async () => {
+      try {
+        const user = JSON.parse(localStorage.getItem("user"));
+        const userId = user?._id;
+        if (!userId) return;
 
-    if (token) {
-      fetchLogs()
-        .then((data) => {
-          setActivityData(data);
-          setLoading(false);
-        })
-        .catch((err) => {
-          setError(err.message || "Failed to fetch activity logs.");
-          setLoading(false);
-        });
-    } else {
-      setError("No token found. Please log in.");
-      setLoading(false);
-    }
+        // Prefer a user-specific endpoint
+        const response = await api.get(`/logs/user/${userId}`);
+        setActivityData(response.data);
+      } catch (err) {
+        setError("Failed to fetch logs");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchUserLogs();
   }, []);
 
-  // Function to get class name based on action type
   const getActionClass = (action) => {
+    if (!action || typeof action !== "string") return "";
     switch (action.toLowerCase()) {
       case "requested asset":
         return "action-request";
@@ -81,7 +81,11 @@ const UserActivityLogs = () => {
                 <td>{index + 1}</td>
                 <td className={getActionClass(log.action)}>{log.action}</td>
                 <td>{log.details}</td>
-                <td>{new Date(log.timestamp).toLocaleString()}</td>
+                <td>
+                  {log.timestamp
+                    ? new Date(log.timestamp).toLocaleString()
+                    : "N/A"}
+                </td>
               </tr>
             ))
           ) : (
