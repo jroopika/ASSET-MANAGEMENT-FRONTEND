@@ -13,10 +13,10 @@ const Hod = () => {
 
   const fetchAllData = async () => {
     try {
-      const pendingRes = await axios.get("https://asset-management-backend-qezn.onrender.com/api/requests/pending");
+      const pendingRes = await axios.get("https://asset-management-backend-crnj.onrender.com/api/requests/pending");
       setPendingRequests(pendingRes.data);
 
-      const assignedRes = await axios.get("https://asset-management-backend-qezn.onrender.com/api/requests/approved");
+      const assignedRes = await axios.get("https://asset-management-backend-crnj.onrender.com/api/requests/approved");
       const formattedAssets = assignedRes.data.map(asset => ({
         _id: asset._id,
         asset: asset.assetType,
@@ -25,7 +25,7 @@ const Hod = () => {
       }));
       setAssignedAssets(formattedAssets);
 
-      const notifRes = await axios.get("https://asset-management-backend-qezn.onrender.com/api/notifications");
+      const notifRes = await axios.get("https://asset-management-backend-crnj.onrender.com/api/notifications");
       setNotifications(notifRes.data);
       setUnreadCount(notifRes.data.filter(n => !n.is_read).length);
     } catch (err) {
@@ -41,7 +41,7 @@ const Hod = () => {
   const handleApprove = async (_id) => {
     try {
       const requestToApprove = pendingRequests.find(req => req._id === _id);
-      await axios.put(`https://asset-management-backend-qezn.onrender.com/api/requests/${_id}/approve`);
+      await axios.put(`https://asset-management-backend-crnj.onrender.com/api/requests/${_id}/approve`);
       const approvedAsset = {
         _id: _id,
         asset: requestToApprove.assetType,
@@ -60,7 +60,7 @@ const Hod = () => {
   const handleReject = async (_id) => {
     try {
       const requestToReject = pendingRequests.find(req => req._id === _id);
-      await axios.put(`https://asset-management-backend-qezn.onrender.com/api/requests/${_id}/reject`);
+      await axios.put(`https://asset-management-backend-crnj.onrender.com/api/requests/${_id}/reject`);
       setPendingRequests(pendingRequests.filter(req => req._id !== _id));
       addNotification(`Request for ${requestToReject.assetType} from ${requestToReject.userId?.name || 'Unknown User'} rejected`);
     } catch (err) {

@@ -10,7 +10,7 @@ const AdminRequests = () => {
   // Fetch all requests from the backend
   const fetchRequests = async () => {
     try {
-      const response = await axios.get("https://asset-management-backend-qezn.onrender.com/api/requests/all");
+      const response = await axios.get("https://asset-management-backend-crnj.onrender.com/api/requests/all");
       setRequests(response.data);
     } catch (error) {
       console.error("Error fetching requests:", error);
@@ -36,7 +36,7 @@ const AdminRequests = () => {
       const approvedBy = localStorage.getItem("userId");
       const updatedRequest = { ...request, status: action, approvedBy };
 
-      await axios.put(`https://asset-management-backend-qezn.onrender.com/api/requests/request/${id}`, updatedRequest);
+      await axios.put(`https://asset-management-backend-crnj.onrender.com/api/requests/request/${id}`, updatedRequest);
 
       setRequests((prevRequests) =>
         prevRequests.map((req) => (req._id === id ? { ...req, status: action } : req))

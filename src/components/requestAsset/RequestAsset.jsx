@@ -32,7 +32,7 @@ const RequestAsset = () => {
     }
 
     try {
-      const response = await axios.post("https://asset-management-backend-qezn.onrender.com/api/requests/request", {
+      const response = await axios.post("https://asset-management-backend-crnj.onrender.com/api/requests/request", {
         userId,
         assetType,
         reason,

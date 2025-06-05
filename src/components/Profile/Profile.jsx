@@ -65,7 +65,7 @@ const Profile = () => {
       }
 
       // Use environment variable for API base URL or fallback to localhost
-      const apiBaseUrl = process.env.REACT_APP_API_URL || "https://asset-management-backend-qezn.onrender.com";
+      const apiBaseUrl = process.env.REACT_APP_API_URL || "https://asset-management-backend-crnj.onrender.com";
       const url = `${apiBaseUrl}/api/auth/users/${user._id}`;
 
       // Send update request to backend

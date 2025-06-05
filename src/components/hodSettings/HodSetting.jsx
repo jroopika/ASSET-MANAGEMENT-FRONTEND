@@ -49,7 +49,7 @@ const HODSettings = () => {
     }
 
     try {
-      const apiBaseUrl = process.env.REACT_APP_API_URL || "https://asset-management-backend-qezn.onrender.com";
+      const apiBaseUrl = process.env.REACT_APP_API_URL || "https://asset-management-backend-crnj.onrender.com";
       const url = `${apiBaseUrl}/api/auth/users/${userId}`;
 
       const response = await fetch(url, {

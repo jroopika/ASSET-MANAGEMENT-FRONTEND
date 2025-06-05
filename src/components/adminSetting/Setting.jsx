@@ -40,7 +40,7 @@ const AdminSettings = () => {
 
       console.log("Sending payload to backend:", payload); // Log the data
 
-      const res = await fetch(`https://asset-management-backend-qezn.onrender.com/api/auth/users/${userId}`, {
+      const res = await fetch(`https://asset-management-backend-crnj.onrender.com/api/auth/users/${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

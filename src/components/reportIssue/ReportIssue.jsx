@@ -23,7 +23,7 @@ const ReportIssue = () => {
   // Check if the asset exists when the user finishes typing the asset name
   const checkAssetExists = async () => {
     try {
-      const response = await axios.get(`https://asset-management-backend-qezn.onrender.com/api/assets/checkByName?assetName=${assetName}`);
+      const response = await axios.get(`https://asset-management-backend-crnj.onrender.com/api/assets/checkByName?assetName=${assetName}`);
       if (response.data) {
         console.log("Asset found:", response.data); // Handle found asset
         setAssetId(response.data._id); // Set the assetId
@@ -50,7 +50,7 @@ const ReportIssue = () => {
     }
 
     try {
-      await axios.post("https://asset-management-backend-qezn.onrender.com/api/issues", {
+      await axios.post("https://asset-management-backend-crnj.onrender.com/api/issues", {
         assetId,
         userId,
         issue,

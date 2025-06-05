@@ -9,7 +9,7 @@ const IssuesPage = () => {
 
   useEffect(() => {
     // Fetch issues from backend
-    axios.get('https://asset-management-backend-qezn.onrender.com/api/issues')
+    axios.get('https://asset-management-backend-crnj.onrender.com/api/issues')
       .then(response => {
         setIssues(response.data);
         setLoading(false);
@@ -22,7 +22,7 @@ const IssuesPage = () => {
 
   const handleResolve = (issueId) => {
     // Mark issue as resolved
-    axios.put(`https://asset-management-backend-qezn.onrender.com/api/issues/${issueId}/resolve`)
+    axios.put(`https://asset-management-backend-crnj.onrender.com/api/issues/${issueId}/resolve`)
       .then(response => {
         setIssues(issues.map(issue =>
           issue._id === issueId ? { ...issue, status: 'resolved' } : issue
