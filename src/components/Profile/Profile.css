@@ -1,7 +1,7 @@
-/* Dark Theme Background */
+/* Light Theme Background */
 .user-profile-container {
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #333333;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -13,44 +13,44 @@
 .user-profile-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #4CAF50;
+  color: #28A745;
   margin-bottom: 20px;
 }
 
 /* Profile Info Section */
 .user-profile-info {
-  background-color: #2d2d2d;
+  background-color: #f8f9fa;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #404040;
+  border: 1px solid #e0e0e0;
   width: 50%;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Labels */
 .user-profile-label {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #ffffff;
+  color: #333333;
 }
 
 /* Input Fields */
 .user-profile-input {
   padding: 8px;
   font-size: 1rem;
-  border: 1px solid #404040;
+  border: 1px solid #ced4da;
   border-radius: 5px;
-  background-color: #333333;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #333333;
 }
 
 .user-profile-input:focus {
   outline: none;
-  border-color: #4CAF50;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+  border-color: #28A745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
 }
 
 /* Buttons */
@@ -65,24 +65,24 @@
 
 /* Edit Button */
 .user-profile-edit-btn {
-  background-color: #4CAF50;
+  background-color: #28A745;
   color: white;
 }
 
 .user-profile-edit-btn:hover {
-  background-color: #45a049;
+  background-color: #218838;
   transform: translateY(-2px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Save Button */
 .user-profile-save-btn {
-  background-color: #4CAF50;
+  background-color: #28A745;
   color: white;
 }
 
 .user-profile-save-btn:hover {
-  background-color: #45a049;
+  background-color: #218838;
   transform: translateY(-2px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

@@ -1,120 +1,310 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './LandingPage.css';
-import logo from './logo.webp';
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import {
+  FaQrcode,
+  FaLaptop,
+  FaChartBar,
+  FaMobileAlt,
+  FaShieldAlt,
+  FaTools,
+  FaClipboardCheck,
+  FaBars,
+  FaTimes,
+  FaWarehouse,
+  FaHeadphones,
+  FaKeyboard,
+  FaMouse,
+  FaDesktop,
+  FaFileAlt,
+  FaCog,
+  FaRecycle,
+  FaArrowRight,
+} from "react-icons/fa"
+import "./LandingPage.css"
 
 const LandingPage = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
   useEffect(() => {
     const handleScroll = () => {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    };
+      setIsScrolled(window.scrollY > 50)
+    }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  // Smooth scrolling function
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+    setIsMenuOpen(false)
+  }
+
+  const navItems = [
+    { id: "features", label: "Features" },
+    { id: "assets", label: "Assets" },
+    { id: "process", label: "Process" },
+    { id: "reports", label: "Reports" },
+  ]
+
+  const assetTypes = [
+    { icon: FaLaptop, label: "Laptops" },
+    { icon: FaDesktop, label: "Printers" },
+    { icon: FaShieldAlt, label: "Scanners" },
+    { icon: FaClipboardCheck, label: "Projectors" },
+    { icon: FaMouse, label: "Mouse" },
+    { icon: FaKeyboard, label: "Keyboard" },
+    { icon: FaHeadphones, label: "Headsets" },
+    { icon: FaTools, label: "Peripherals" },
+  ]
+
+  const features = [
+    {
+      icon: FaQrcode,
+      title: "QR Code Asset Tagging",
+      description: "Each asset gets a unique QR code stored in the database for instant identification and tracking",
+    },
+    {
+      icon: FaMobileAlt,
+      title: "Mobile App Integration",
+      description: "Scan QR codes via mobile app to report problems and track asset status in real-time",
+    },
+    {
+      icon: FaWarehouse,
+      title: "Centralized Distribution",
+      description: "Assets are distributed through common store with centralized request processing",
+    },
+    {
+      icon: FaChartBar,
+      title: "Comprehensive Reports",
+      description: "Generate reports for total assets, department-wise, AMC status, and end-of-service assets",
+    },
+  ]
+
+  const processSteps = [
+    {
+      step: "01",
+      title: "Request Aggregation",
+      description: "Asset requests are collected and centrally processed for efficient handling",
+    },
+    {
+      step: "02",
+      title: "Asset Distribution",
+      description: "Assets are distributed through the common store with proper documentation",
+    },
+    {
+      step: "03",
+      title: "QR Code Tagging",
+      description: "Each asset receives a unique QR code and is registered in the database",
+    },
+    {
+      step: "04",
+      title: "Final Issuance",
+      description: "Assets are issued to end users with complete tracking and accountability",
+    },
+  ]
 
   return (
-    <div className="landing-page" style={{ fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" }}>
-      {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-light fixed-top">
-        <div className="container">
-          <img src={logo} alt="Logo" className="navbar-logo" />
-          <a className="navbar-brand" href="#">Asset Management</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item"><a className="nav-link" href="#features">Features</a></li>
-              <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
-              
-            </ul>
+    <div className="landing-page">
+      {/* Enhanced Navbar */}
+      <nav className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`}>
+        <div className="navbar__container">
+          <div className="navbar__logo-container">
+            <Link to="/" className="navbar__logo">
+              <FaQrcode className="navbar__logo-icon" />
+              <span className="navbar__logo-text">AMS</span>
+            </Link>
           </div>
+
+          <button
+            className="navbar__menu-toggle"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+          >
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+
+          <ul className={`navbar__menu ${isMenuOpen ? "navbar__menu--active" : ""}`}>
+            {navItems.map((item, index) => (
+              <li key={index} className="navbar__item">
+                <button className="navbar__link" onClick={() => scrollToSection(item.id)}>
+                  {item.label}
+                </button>
+              </li>
+            ))}
+            <li className="navbar__item navbar__item--auth">
+              <Link to="/login" className="navbar__link navbar__link--login">
+                Login
+              </Link>
+            </li>
+          </ul>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="hero-section d-flex">
-        <div className="hero-content d-flex align-items-center justify-content-center">
-          <div className="text-container text-center">
-            <h1 className="hero-title">Experience Next-Level Asset Management</h1>
-            <p className="hero-subtitle">Simplify how you track and manage your assets with our state-of-the-art platform.</p>
+      {/* Hero Section with Big Typography */}
+      <section className="hero">
+        <div className="hero__content">
+          <div className="hero__badge">RP7001</div>
+          <h1 className="hero__title">
+            <span className="hero__title-large">Asset</span>
+            <span className="hero__title-large hero__title-accent">Management</span>
+            <span className="hero__title-large">System</span>
+          </h1>
+          <p className="hero__subtitle">
+            Efficiently track, manage, and maintain organizational assets with QR code technology
+          </p>
+          <div className="hero__actions">
+            <Link to="/login" className="btn btn--primary">
+              Get Started <FaArrowRight className="btn__icon" />
+            </Link>
+            <button onClick={() => scrollToSection("features")} className="btn btn--secondary">
+              Learn More
+            </button>
           </div>
         </div>
-        <div className="get-started-section d-flex align-items-center justify-content-center">
-          <div className="text-center">
-            <h2 className="get-started-title">Ready to Get Started?</h2>
-            <p className="get-started-description">Sign up today and revolutionize the way you manage your assets.</p>
-            <Link to="/login" className="btn btn-animated">Get Started</Link>
-          </div>
+        <div className="hero__background">
+          <div className="hero__shape hero__shape--1"></div>
+          <div className="hero__shape hero__shape--2"></div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="features-section">
+      {/* Features Section with Big Typography */}
+      <section id="features" className="section features">
         <div className="container">
-          <h2 className="section-title">Features</h2>
-          <p className="section-description">Explore our powerful features designed to help you manage your assets effortlessly.</p>
-          <div className="row">
-            <div className="col-md-6 col-lg-4">
-              
-                <div className="card-body">
-                  <h5 className="card-title">Real-time Asset Tracking</h5>
-                  <p className="card-text">Track all your assets in real-time with detailed information and updates.</p>
+          <div className="section__header">
+            <span className="section__eyebrow">Core Capabilities</span>
+            <h2 className="section__title">
+              <span className="text-accent">Key</span> Features
+            </h2>
+          </div>
+          <div className="features__grid">
+            {features.map((feature, index) => (
+              <div key={index} className="feature-card">
+                <div className="feature-card__header">
+                  <feature.icon className="feature-card__icon" />
+                  <h3 className="feature-card__title">{feature.title}</h3>
                 </div>
-              
-            </div>
-            <div className="col-md-6 col-lg-4">
-              
-                <div className="card-body">
-                  <h5 className="card-title">Detailed Analytics and Reporting</h5>
-                  <p className="card-text">Get comprehensive insights with visual analytics and detailed reports.</p>
-                </div>
-              
-            </div>
-            <div className="col-md-6 col-lg-4">
-              
-                <div className="card-body">
-                  <h5 className="card-title">Customizable Alerts</h5>
-                  <p className="card-text">Set alerts and notifications to stay informed about important changes.</p>
-                </div>
-              
-            </div>
+                <p className="feature-card__description">{feature.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-     {/* About Section */}
-<section id="about" className="about-section">
-  <div className="container">
-    <h2 className="section-title">About Us</h2>
-    
-      <div className="card-body">
-      <h5 className="card-title">Our mission</h5>
-      <p className="card-text">
-          To simplify asset management for individuals and businesses through innovative technology and intuitive design.
-        </p>
-      </div>
-    
-    
-      <div className="card-body">
-        <h5 className="card-title">Our Vision</h5>
-        <p className="card-text">
-          Empowering businesses with the tools they need to manage assets efficiently and securely.
-        </p>
-      </div>
-    
-  </div>
-</section>
+      {/* Asset Types Section */}
+      <section id="assets" className="section asset-types">
+        <div className="container">
+          <div className="section__header">
+            <span className="section__eyebrow">What We Track</span>
+            <h2 className="section__title">
+              Supported <span className="text-accent">Assets</span>
+            </h2>
+          </div>
+          <div className="asset-types__grid">
+            {assetTypes.map((asset, index) => (
+              <div key={index} className="asset-type-card">
+                <asset.icon className="asset-type-card__icon" />
+                <span className="asset-type-card__label">{asset.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      {/* Process Section */}
+      <section id="process" className="section process">
+        <div className="container">
+          <div className="section__header">
+            <span className="section__eyebrow">How It Works</span>
+            <h2 className="section__title">
+              <span className="text-accent">Management</span> Process
+            </h2>
+          </div>
+          <div className="process__grid">
+            {processSteps.map((step, index) => (
+              <div key={index} className="process-card">
+                <div className="process-card__step">{step.step}</div>
+                <h3 className="process-card__title">{step.title}</h3>
+                <p className="process-card__description">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reports & Mobile App Combined Section */}
+      <section id="reports" className="section reports-mobile">
+        <div className="container">
+          <div className="section__header">
+            <span className="section__eyebrow">Insights & Access</span>
+            <h2 className="section__title">
+              <span className="text-accent">Reports</span> & Mobile App
+            </h2>
+          </div>
+          <div className="reports-mobile__grid">
+            <div className="reports-section">
+              <div className="reports__list">
+                <div className="report-item">
+                  <FaFileAlt className="report-item__icon" />
+                  <div>
+                    <h4>Total Assets Report</h4>
+                    <p>Complete overview of all organizational assets</p>
+                  </div>
+                </div>
+                <div className="report-item">
+                  <FaChartBar className="report-item__icon" />
+                  <div>
+                    <h4>Department-wise Reports</h4>
+                    <p>Asset allocation for specific departments</p>
+                  </div>
+                </div>
+                <div className="report-item">
+                  <FaCog className="report-item__icon" />
+                  <div>
+                    <h4>AMC Status Reports</h4>
+                    <p>Maintenance contract status and schedules</p>
+                  </div>
+                </div>
+                <div className="report-item">
+                  <FaRecycle className="report-item__icon" />
+                  <div>
+                    <h4>End-of-Service Reports</h4>
+                    <p>Assets requiring disposal or replacement</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mobile-section">
+              <div className="mobile-phone">
+                <div className="mobile-phone__screen">
+                  <div className="mobile-phone__content">
+                    <FaQrcode className="mobile-phone__qr-icon" />
+                    <h3>Scan QR Code</h3>
+                    <p>Report problems instantly</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mobile__features">
+                <div className="mobile__feature">
+                  <FaQrcode />
+                  <span>QR Scanning</span>
+                </div>
+                <div className="mobile__feature">
+                  <FaTools />
+                  <span>Problem Reporting</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  );
-};
+  )
+}
 
-export default LandingPage;
+export default LandingPage

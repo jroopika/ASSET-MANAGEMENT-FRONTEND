@@ -33,7 +33,6 @@ const ActivityLogs = () => {
             assetType: 'Laptop',
             reason: 'Need for development work',
             status: 'Approved',
-            hodApprovalStatus: 'Approved',
             requestedAt: new Date().toISOString(),
           },
           {
@@ -42,7 +41,6 @@ const ActivityLogs = () => {
             assetType: 'Projector',
             reason: 'Presentation needs',
             status: 'Rejected',
-            hodApprovalStatus: 'Pending',
             requestedAt: new Date().toISOString(),
           },
         ]);
@@ -83,14 +81,13 @@ const ActivityLogs = () => {
                 <th>Asset Type</th>
                 <th>Reason</th>
                 <th>Status</th>
-                <th>HOD Approval</th>
                 <th>Requested At</th>
               </tr>
             </thead>
             <tbody>
               {requests.length === 0 ? (
                 <tr>
-                  <td colSpan="6" className="empty-row">No requests available</td>
+                  <td colSpan="5" className="empty-row">No requests available</td>
                 </tr>
               ) : (
                 requests.map((request) => (
@@ -105,25 +102,6 @@ const ActivityLogs = () => {
                           {request.status.toLowerCase() === 'approved' ? <FaCheck /> : <FaTimes />}
                         </span>
                       ) : 'N/A'}
-                    </td>
-                    <td>
-                      {request.status === 'Approved' ? (
-                        <span className="badge badge-success">Approved</span>
-                      ) : request.hodApprovalStatus ? (
-                        <span
-                          className={`badge ${
-                            request.hodApprovalStatus.toLowerCase() === 'approved'
-                              ? 'badge-success'
-                              : request.hodApprovalStatus.toLowerCase() === 'pending'
-                              ? 'badge-warning'
-                              : 'badge-danger'
-                          }`}
-                        >
-                          {request.hodApprovalStatus}
-                        </span>
-                      ) : (
-                        'N/A'
-                      )}
                     </td>
                     <td>{formatDate(request.requestedAt)}</td>
                   </tr>
